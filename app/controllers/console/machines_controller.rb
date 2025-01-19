@@ -1,5 +1,5 @@
 module Console
-  class MachinesController < ApplicationController
+  class MachinesController < ConsoleController
     def index
       @machines = current_user.machines
     end

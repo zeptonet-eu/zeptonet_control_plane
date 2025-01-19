@@ -3,7 +3,12 @@
   <%= render "layouts/headers" %>
 
   <body>
-    <nav class="flex justify-between">
+    <nav class="container mx-auto p-5 flex justify-between">
+      <div class="flex space-x-4">
+        <%= link_to "Machines", console_machines_path %>
+        <%= link_to "Settings", console_settings_path %>
+      </div>
+
       <%= button_to "Log out", destroy_session_path, method: :delete %>
     </nav>
     <main class="container mx-auto mt-28 px-5">

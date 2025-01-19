@@ -11,4 +11,5 @@ class User < ApplicationRecord
   validates :uid, uniqueness: { scope: :provider }
 
   has_many :sessions, dependent: :destroy
+  has_many :machines, dependent: :destroy
 end
