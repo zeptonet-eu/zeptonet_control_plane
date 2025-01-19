@@ -60,3 +60,4 @@ end
 
 gem "omniauth", "~> 2.1"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
+gem "doorkeeper", "~> 5.8"

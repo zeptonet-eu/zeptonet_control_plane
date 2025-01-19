@@ -4,7 +4,9 @@ RSpec.describe User, type: :model do
   subject { build(:user) }
 
   describe "associations" do
-    it { should have_many(:sessions) }
+    it { should have_many(:sessions).dependent(:destroy) }
+    it { should have_many(:access_tokens).dependent(:delete_all) }
+    it { should have_many(:access_grants).dependent(:delete_all) }
   end
 
   describe "validations" do

@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include DoorkeeperResourceOwner
+
   normalizes :email, with: ->(email) { email.strip.downcase }
   normalizes :provider, with: ->(provider) { provider.downcase }
 
