@@ -1,0 +1,14 @@
+<section class="container mx-auto w-96 p-4 text-center shadow rounded">
+  <h1 class="text-lg font-medium">Sign up with your identity provider</h1>
+  <p class="text-stone-700">You'll use this provider to log in to your network</p>
+
+  <div class="mt-8">
+    <%= button_to "Login with Developer", "/auth/developer", data: {turbo: false} %>
+  </div>
+</section>
+
+<% if flash[:alert].present? %>
+  <div class="container mx-auto w-96 p-4 text-center shadow rounded border border-red-100 mt-8">
+    <p class="text-red-600"><%= flash[:alert] %></p>
+  </div>
+<% end %>

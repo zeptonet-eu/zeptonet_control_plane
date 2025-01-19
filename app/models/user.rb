@@ -7,4 +7,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: { case_sensitive: false }
   validates :provider, :uid, presence: true
   validates :uid, uniqueness: { scope: :provider }
+
+  has_many :sessions, dependent: :destroy
 end

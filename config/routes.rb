@@ -9,5 +9,10 @@ Rails.application.routes.draw do
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
+  get "auth/:provider/callback", to: "sessions#create"
+  get "/login", to: "sessions#new", as: :new_session
+  delete "/logout", to: "sessions#destroy", as: :destroy_session
+
+
   root "landing#show"
 end
