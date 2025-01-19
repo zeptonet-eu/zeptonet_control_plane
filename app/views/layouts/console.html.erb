@@ -4,11 +4,7 @@
 
   <body>
     <nav class="flex justify-between">
-      <% if authenticated? %>
-        <%= link_to "Console", console_settings_path %>
-      <% else %>
-        <%= link_to "Log in", new_session_path %>
-      <% end %>
+      <%= button_to "Log out", destroy_session_path, method: :delete %>
     </nav>
     <main class="container mx-auto mt-28 px-5">
       <%= yield %>
