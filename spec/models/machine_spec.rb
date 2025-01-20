@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Machine, type: :model do
-  subject { build(:machine) }
+  subject { create(:machine) }
 
   describe "associations" do
     it { should belong_to(:user) }

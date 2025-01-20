@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :machine do
-    user
+    user { create(:user) }
     sequence(:name) { |i| "machine#{i}" }
     public_key { "abcd" }
     sequence(:ip_address) { |i| "192.168.0.#{i}" }
