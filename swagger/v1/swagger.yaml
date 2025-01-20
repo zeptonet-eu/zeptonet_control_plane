@@ -4,6 +4,41 @@ info:
   title: API V1
   version: v1
 paths:
+  "/api/v1/machines/{machine_id}/heartbeats":
+    post:
+      summary: Creates a new heartbeat
+      security:
+      - oauth2: []
+      tags:
+      - Machines
+      parameters:
+      - name: Authorization
+        in: header
+        required: true
+        description: Bearer token
+        schema:
+          type: string
+      - name: machine_id
+        in: path
+        required: true
+        description: Machine ID
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                last_handshake:
+                  type: string
+              required:
+              - last_handshake
   "/api/v1/machines":
     post:
       summary: Creates a new machine

@@ -6,6 +6,8 @@ end
 
 namespace "api", defaults: { format: :json } do
   namespace "v1" do
-    resources :machines, only: %i[create]
+    resources :machines, only: %i[create] do
+      resources :heartbeats, only: %i[create], module: :machines
+    end
   end
 end

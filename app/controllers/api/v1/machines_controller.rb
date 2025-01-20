@@ -3,7 +3,7 @@ module API
     class MachinesController < APIController
       def create
         @machine = current_user.machines.create!(machine_params)
-        render json: @machine
+        render json: @machine, status: :created
       end
 
       private

@@ -18,7 +18,7 @@ RSpec.describe "Machines", type: :request do
         required: %w[name public_key]
       }
 
-      response "200", "Success" do
+      response "201", "Created" do
         let(:Authorization) { "Bearer #{oauth_access_token.token}" }
 
         let(:machine) do
