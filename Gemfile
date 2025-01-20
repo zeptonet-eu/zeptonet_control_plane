@@ -46,6 +46,8 @@ group :development, :test do
   gem "selenium-webdriver"
 
   gem "pry-byebug"
+
+  gem "rswag-specs"
 end
 
 group :test do
@@ -62,3 +64,5 @@ gem "omniauth", "~> 2.1"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem "doorkeeper", "~> 5.8"
 gem "view_component", "~> 3.21"
+gem "rswag-api"
+gem "rswag-ui"
